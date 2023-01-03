@@ -35,8 +35,8 @@ export default {
 
     // A list of reporter names that Jest uses when writing coverage reports
 
-    "coverageReporters":
-        ["html", "text", "text-summary", "cobertura"],
+    // "coverageReporters":
+    //     ["html", "text", "text-summary", "cobertura"],
 
     // An object that configures minimum threshold enforcement for coverage results
     // coverageThreshold: undefined,
