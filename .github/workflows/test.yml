@@ -13,8 +13,11 @@ jobs:
       run: yarn
     - name: Run tests
       run: yarn test
-      
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@v4
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
       with:
-        folder: coverage/lcov-report # The folder the action should deploy.
+        # Upload entire repository
+        path: 'coverage/lcov-report'
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@main
