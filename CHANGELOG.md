@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/dworac/typescript-template/compare/v1.1.0...v1.2.0) (2023-01-03)
+
+
+### Features
+
+* removed log ([737c8a5](https://github.com/dworac/typescript-template/commit/737c8a5c91b24fbbbaa2c0af1ed9e57f4d957049))
+
 ## [1.1.0](https://github.com/dworac/typescript-template/compare/v1.0.0...v1.1.0) (2023-01-03)
 
 
