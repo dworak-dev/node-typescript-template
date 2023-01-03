@@ -1,6 +1,6 @@
 {
   "watch": ["src"],
-  "ignore": ["node_modules"],
+  "ignore": ["node_modules", "dist", ".idea", "coverage"],
   "ext": "ts,mjs,js,json,env",
   "exec": "yarn build && yarn start",
   "legacyWatch": true
