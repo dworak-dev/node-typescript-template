@@ -191,5 +191,9 @@ export default {
     // watchman: true,
     "transform": {
         "^.+\\.tsx?$": "esbuild-jest"
-    }
+    },
+    "transformIgnorePatterns": [
+        "node_modules/(?!variables/.*)"
+    ],
+    "testEnvironment": "node",
 };
