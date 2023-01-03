@@ -1,0 +1,7 @@
+{
+  "watch": ["src"],
+  "ignore": ["node_modules"],
+  "ext": "ts,mjs,js,json,env",
+  "exec": "yarn build && yarn start",
+  "legacyWatch": true
+}

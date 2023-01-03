@@ -45,8 +45,10 @@ class Logger {
 	 */
 	static logError(message: string | Error) {
 		if (typeof message === 'string') {
+			// eslint-disable-next-line no-console
 			console.log(chalk.red('[ERROR] ') + chalk.red(message));
 		} else {
+			// eslint-disable-next-line no-console
 			console.log(chalk.red('[ERROR] ') + chalk.red(message.message));
 		}
 
