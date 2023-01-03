@@ -17,11 +17,4 @@ module.exports = {
 	parserOptions: {
 		project: './tsconfig.json',
 	},
-	ignorePatterns: [
-		'node_modules',
-		'dist',
-		'jest.config.ts',
-		'coverage',
-		'.idea',
-	],
 };
