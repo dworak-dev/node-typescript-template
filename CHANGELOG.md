@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/dworac/typescript-template/compare/v1.2.0...v1.3.0) (2023-01-04)
+
+
+### Features
+
+* renewed workflows ([958f432](https://github.com/dworac/typescript-template/commit/958f432746c85fd3016c25456876dc6e8f358323))
+
 ## [1.2.0](https://github.com/dworac/typescript-template/compare/v1.1.0...v1.2.0) (2023-01-03)
 
 
