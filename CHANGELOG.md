@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.4.0](https://github.com/dworac/typescript-template/compare/v1.3.0...v1.4.0) (2023-01-04)
+
+
+### Features
+
+* master.yml ([da3c5f0](https://github.com/dworac/typescript-template/commit/da3c5f09e2df4a62352e1a5e8d2c628290651a59))
+
+
+### Bug Fixes
+
+* master.yml name ([a1c1814](https://github.com/dworac/typescript-template/commit/a1c1814a0c6ad559731b03fde8b4d451d77fd9de))
+* master.yml removed coverage part ([fb8296e](https://github.com/dworac/typescript-template/commit/fb8296e60208cb010ae0af3c679ecbf565a797c1))
+
 ## [1.3.0](https://github.com/dworac/typescript-template/compare/v1.2.0...v1.3.0) (2023-01-04)
 
 
