@@ -1,0 +1,21 @@
+name: Deployment
+on:
+  release:
+jobs:
+    deployment:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - uses: actions/cache@v2
+          with:
+            path: '**/node_modules'
+            key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+        - name: Install modules
+          run: yarn
+        - name: Run tests
+          run: yarn test
+        - name: DigitalOcean App Platform deployment
+          uses: digitalocean/app_action@main
+          with:
+            app_name: my_DO_app
+            token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
