@@ -1,3 +1,14 @@
 import Logger from './utils/logger';
 
-Logger.logInfo('Hello World!');
+/**
+ * Main function.
+ */
+async function main() {
+	Logger.logInfo('Hello World!');
+}
+
+main().catch((e) => {
+	// eslint-disable-next-line no-console
+	console.error(e);
+	process.exit(1);
+});
