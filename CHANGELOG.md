@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/dworac/node-typescript-template/compare/v1.1.0...v1.2.0) (2023-01-07)
+
+
+### Features
+
+* added discord support ([baafae3](https://github.com/dworac/node-typescript-template/commit/baafae3d66b81d63cd858018f384265bc3c8781f))
+
 ## [1.1.0](https://github.com/dworac/node-typescript-template/compare/v1.0.0...v1.1.0) (2023-01-07)
 
 
