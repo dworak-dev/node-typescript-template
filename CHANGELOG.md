@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/dworac/node-typescript-template/compare/v1.0.0...v1.1.0) (2023-01-07)
+
+
+### Features
+
+* added discord settings.yml ([ddd5266](https://github.com/dworac/node-typescript-template/commit/ddd5266cec371833797230f2c468fe032bd252b1))
+
 ## 1.0.0 (2023-01-07)
 
 
