@@ -9,6 +9,9 @@ repository:
   # A short description of the repository that will show up on GitHub
   description: Basic typescript template for node projects. Includes eslint, prettier, jest, and github actions. Compiled with esbuild and tested with jest.
 
+  # Either 'true' or 'false' to make it a template.
+  is_template: true
+
   # A URL with more information about the repository
   homepage: https://github.com/dworac/node-typescript-template
 
