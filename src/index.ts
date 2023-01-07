@@ -1,10 +1,13 @@
+import discord from './discord';
 import Logger from './utils/logger';
 
 /**
  * Main function.
  */
 async function main() {
-	Logger.logInfo('Hello World!');
+	Logger.logInfo('Starting Discord bot');
+	// Discord bot
+	await discord();
 }
 
 main().catch((e) => {
