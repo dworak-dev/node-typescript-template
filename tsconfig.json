@@ -116,6 +116,7 @@
     "jest.config.js",
     "coverage",
     ".idea",
-    ".husky"
+    ".husky",
+    "migrations"
   ]
 }

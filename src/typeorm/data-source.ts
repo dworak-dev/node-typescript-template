@@ -12,7 +12,7 @@ const AppDataSource = new DataSource({
 	synchronize: false,
 	logging: false,
 	entities: [User],
-	migrations: ['./migration/**/*.ts'],
+	migrations: ['./migrations/**/*{.ts,.js}'],
 	subscribers: [],
 	ssl: {
 		rejectUnauthorized: false,

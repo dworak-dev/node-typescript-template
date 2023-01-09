@@ -13,6 +13,9 @@ class User {
 
 	@Column('int')
 	age: number;
+
+	@Column('text', { nullable: true })
+	phone: string;
 }
 
 export default User;

@@ -24,7 +24,8 @@
     "prepare": "husky install",
     "test": "jest",
     "typeorm": "typeorm-ts-node-esm",
-    "migration": "typeorm-ts-node-esm migration:generate ./migrations/update -d ./src/typeorm/data-source"
+    "migration": "typeorm-ts-node-esm migration:generate ./migrations/update -d ./src/typeorm/data-source --outputJs",
+    "migration:run": "npx typeorm-ts-node-esm migration:run -d ./src/typeorm/data-source"
   },
   "devDependencies": {
     "@types/jest": "^29.2.5",
