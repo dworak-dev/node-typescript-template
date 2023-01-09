@@ -1,11 +1,13 @@
 import discord from './discord';
-import Logger from './utils/logger';
+import typeorm from './typeorm';
 
 /**
  * Main function.
  */
 async function main() {
-	Logger.logInfo('Starting Discord bot');
+	// Typeorm
+	await typeorm();
+
 	// Discord bot
 	await discord();
 }

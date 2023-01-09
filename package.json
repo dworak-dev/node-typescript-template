@@ -10,16 +10,22 @@
     "chalk": "^2.4.2",
     "discord-api-types": "^0.37.26",
     "discord.js": "^14.7.1",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "pg": "^8.8.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.11"
   },
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.js --minify --external:discord.js --external:chalk",
+    "build": "esbuild src/index.ts --bundle --platform=node --outfile=dist/index.js --minify --external:discord.js --external:chalk --external:typeorm",
     "start": "node dist/index.js",
     "start:dev": "nodemon",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "typeorm": "typeorm-ts-node-esm",
+    "migration": "typeorm-ts-node-esm migration:generate ./migrations/update -d ./src/typeorm/data-source --outputJs",
+    "migration:run": "npx typeorm-ts-node-esm migration:run -d ./src/typeorm/data-source"
   },
   "devDependencies": {
     "@types/jest": "^29.2.5",

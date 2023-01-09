@@ -4,4 +4,4 @@ coverage/
 .idea/
 jest.config.ts
 .husky/
-
+migrations/
