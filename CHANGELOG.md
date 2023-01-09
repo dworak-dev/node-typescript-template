@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.3.0](https://github.com/dworac/node-typescript-template/compare/v1.2.0...v1.3.0) (2023-01-09)
+
+
+### Features
+
+* added basic typeorm support ([0d72b88](https://github.com/dworac/node-typescript-template/commit/0d72b8889f78fb300323d03dcb02e5089f918b38))
+
+
+### Bug Fixes
+
+* fixed added migration ([481885d](https://github.com/dworac/node-typescript-template/commit/481885dacb18d3c3e99662e08d5180d00d52547f))
+* fixed migration commands ([5b070ee](https://github.com/dworac/node-typescript-template/commit/5b070ee498e6023b868c114f6cff990f62266756))
+
 ## [1.2.0](https://github.com/dworac/node-typescript-template/compare/v1.1.0...v1.2.0) (2023-01-07)
 
 
