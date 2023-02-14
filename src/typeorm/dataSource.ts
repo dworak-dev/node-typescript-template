@@ -1,8 +1,9 @@
 import { DataSource } from 'typeorm';
-import User from './data/User';
+import fs from 'fs';
+import User from './models/User';
 import config from '../utils/config';
 
-const AppDataSource = new DataSource({
+export default new DataSource({
 	type: 'postgres',
 	host: config.TYPEORM_HOST,
 	port: config.TYPEORM_PORT,
@@ -15,8 +16,6 @@ const AppDataSource = new DataSource({
 	migrations: ['./migrations/**/*{.ts,.js}'],
 	subscribers: [],
 	ssl: {
-		rejectUnauthorized: false,
+		ca: fs.readFileSync('ca-certificate.crt').toString(),
 	},
 });
-
-export default AppDataSource;

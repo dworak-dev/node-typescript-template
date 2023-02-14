@@ -5,12 +5,18 @@
   "author": "dworac <mail@dworac.com>",
   "license": "MIT",
   "dependencies": {
+    "@apollo/server": "^4.3.3",
     "@discordjs/builders": "^1.4.0",
     "@discordjs/rest": "^1.5.0",
+    "@types/cors": "^2.8.13",
     "chalk": "^2.4.2",
+    "cors": "^2.8.5",
     "discord-api-types": "^0.37.26",
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "graphql": "^16.6.0",
     "pg": "^8.8.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.11"
@@ -24,8 +30,8 @@
     "prepare": "husky install",
     "test": "jest",
     "typeorm": "typeorm-ts-node-esm",
-    "migration": "typeorm-ts-node-esm migration:generate ./migrations/update -d ./src/typeorm/data-source --outputJs",
-    "migration:run": "npx typeorm-ts-node-esm migration:run -d ./src/typeorm/data-source"
+    "migration": "typeorm-ts-node-esm migration:generate ./migrations/update -d ./src/typeorm/dataSource --outputJs",
+    "migration:run": "npx typeorm-ts-node-esm migration:run -d ./src/typeorm/dataSource"
   },
   "devDependencies": {
     "@types/jest": "^29.2.5",
