@@ -1,51 +1,41 @@
+// eslint-disable-next-line max-classes-per-file
 import { Application } from 'express';
-import { ApolloServer } from '@apollo/server';
-// import { ApolloServerPluginLandingPageGraphQLPlayground } from '@apollo/server-plugin-landing-page-graphql-playground';
+import { ApolloServerPluginLandingPageGraphQLPlayground } from '@apollo/server-plugin-landing-page-graphql-playground';
 import cors from 'cors';
 import { json } from 'body-parser';
+import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 
-const typeDefs = `#graphql
-  # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
+import { ObjectType, Field, Resolver, Query, buildSchema } from 'type-graphql';
 
-  # This "Book" type defines the queryable fields for every book in our data source.
-  type Book {
-    title: String
-    author: String
-  }
+@ObjectType()
+export class Product {
+	@Field(() => String)
+	id: string;
 
-  # The "Query" type is special: it lists all of the available queries that
-  # clients can execute, along with the return type for each. In this
-  # case, the "books" query returns an array of zero or more Books (defined above).
-  type Query {
-    books: [Book]
-  }
-`;
+	@Field(() => String)
+	title: string;
 
-const books = [
-	{
-		title: 'The Awakening',
-		author: 'Kate Chopin',
-	},
-	{
-		title: 'City of Glass',
-		author: 'Paul Auster',
-	},
-];
-const resolvers = {
-	Query: {
-		books: () => books,
-	},
-};
+	@Field(() => String)
+	price: number;
+}
+
+@Resolver(() => Product)
+export class ProductResolver {
+	// eslint-disable-next-line class-methods-use-this
+	@Query(() => [Product])
+	products() {
+		return [];
+	}
+}
 export default async (app: Application) => {
-	// const schema = await buildSchema({
-	// 	resolvers: [BookResolver],
-	// });
-	// console.log(schema);
+	const schema = await buildSchema({
+		resolvers: [ProductResolver],
+	});
+
 	const server = new ApolloServer({
-		typeDefs,
-		resolvers,
-		// plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
+		schema,
+		plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 	});
 	await server.start();
 
