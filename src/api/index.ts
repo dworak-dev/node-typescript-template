@@ -5,8 +5,9 @@ import config from '../utils/config';
 import setupRoutes from './routes';
 import logger from '../utils/logger';
 import errorHandling from './errorHandling';
+import graphql from './graphql';
 
-export default () => {
+export default async () => {
 	const app = express();
 
 	// Parse body and urlencoded parameters.
@@ -22,6 +23,9 @@ export default () => {
 
 	// Setup routes
 	setupRoutes(app);
+
+	// Setup graphql
+	graphql(app);
 
 	// Setup error handling
 	errorHandling(app);

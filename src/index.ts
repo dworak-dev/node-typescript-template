@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import discord from './discord';
 import typeorm from './typeorm';
 import api from './api';

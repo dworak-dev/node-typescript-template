@@ -18,9 +18,9 @@ export default (app: Application) => {
 			error: HttpException,
 			_: Request,
 			response: Response,
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
 			_next: NextFunction,
 		) => {
-			console.log('heeeeey -----------------');
 			const status = error.status || 500;
 			const message = error.message || 'Something went wrong';
 			response.status(status).json({
