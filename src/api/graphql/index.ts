@@ -6,12 +6,12 @@ import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
 import { buildSchema } from 'type-graphql';
 import ip from 'ip';
-import jwt from 'jsonwebtoken';
 import passport from 'passport';
 import resolvers from './resolvers';
-import logger from '../../utils/logger';
 import config from '../../utils/config';
 import { GraphQLContext } from './GraphQLContext';
+import User from '../../typeorm/entities/User';
+import Logger from '../../utils/logger';
 
 export default async (app: Application) => {
 	const schema = await buildSchema({
@@ -30,25 +30,30 @@ export default async (app: Application) => {
 		path,
 		cors<cors.CorsRequest>(),
 		json(),
-		passport.authenticate('jwt', { session: false }),
 		expressMiddleware(server, {
 			context: async ({ req }) => {
-				const token = req.headers.authorization;
+				const user = await new Promise<User | undefined>((resolve) => {
+					passport.authenticate(
+						'jwt',
+						{ session: false },
+						(err: Error, _user: User) => {
+							if (err) {
+								Logger.logError(err);
+							}
+							if (_user) {
+								resolve(_user);
+							} else {
+								resolve(undefined);
+							}
+						},
+					)(req);
+				});
 
-				if (!token) {
-					return { user: null };
-				}
-
-				try {
-					const verified = jwt.verify(token, 'secret');
-					return { user: verified };
-				} catch (error) {
-					return { user: null };
-				}
+				return { user };
 			},
 		}),
 	);
-	logger.logSuccess(
+	Logger.logSuccess(
 		`Graphql server listening on url http://${ip.address()}:${
 			config.PORT
 		}${path}`,

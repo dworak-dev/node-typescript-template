@@ -1,13 +1,13 @@
 /* eslint-disable class-methods-use-this */
 import { Arg, Query, Resolver, UseMiddleware } from 'type-graphql';
 import { GraphQLError } from 'graphql';
-import User from '../../../typeorm/models/User';
-import authMiddleware from '../middlewares/auth';
+import User from '../../../typeorm/entities/User';
+import authMiddleware from './middlewares/auth';
 
 @Resolver(() => User)
 export default class UserResolver {
-	@UseMiddleware(authMiddleware)
 	@Query(() => [User])
+	@UseMiddleware(authMiddleware)
 	users() {
 		return User.find();
 	}

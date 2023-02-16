@@ -1,7 +1,7 @@
 import { DataSource } from 'typeorm';
 import fs from 'fs';
-import User from './models/User';
 import config from '../utils/config';
+import entities from './entities';
 
 export default new DataSource({
 	type: 'postgres',
@@ -10,9 +10,9 @@ export default new DataSource({
 	username: config.TYPEORM_USERNAME,
 	password: config.TYPEORM_PASSWORD,
 	database: config.TYPEORM_DATABASE,
-	synchronize: true,
+	synchronize: false,
 	logging: false,
-	entities: [User],
+	entities,
 	migrations: ['./migrations/**/*{.ts,.js}'],
 	subscribers: [],
 	ssl: {

@@ -1,6 +1,6 @@
 import { MiddlewareFn } from 'type-graphql';
 import { GraphQLError } from 'graphql/index';
-import { GraphQLContext } from '../GraphQLContext';
+import { GraphQLContext } from '../../GraphQLContext';
 
 const authMiddleware: MiddlewareFn<GraphQLContext> = ({ context }, next) => {
 	if (context.user) {

@@ -1,5 +1,5 @@
-import { JWTPayload } from '../auth/JWTPayload';
+import User from '../../typeorm/entities/User';
 
 export interface GraphQLContext {
-	user?: JWTPayload;
+	user?: User;
 }

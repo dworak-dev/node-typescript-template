@@ -7,7 +7,7 @@ import setupRoutes from './routes';
 import logger from '../utils/logger';
 import errorHandling from './errorHandling';
 import graphql from './graphql';
-import setupPassport from './auth';
+import setupAuth from './auth';
 
 export default async () => {
 	const app = express();
@@ -17,14 +17,10 @@ export default async () => {
 	app.use(express.urlencoded({ extended: true }));
 
 	// Allow requests from all origins.
-	app.use(
-		cors({
-			credentials: true,
-		}),
-	);
+	app.use(cors({ credentials: true }));
 
-	// setupPassport(app);
-	setupPassport(app);
+	// Setup authentication.
+	setupAuth(app);
 
 	// Setup routes
 	setupRoutes(app);
