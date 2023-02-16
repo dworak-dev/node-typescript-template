@@ -1,11 +1,13 @@
 import express from 'express';
 import 'express-async-errors';
 import cors from 'cors';
+import ip from 'ip';
 import config from '../utils/config';
 import setupRoutes from './routes';
 import logger from '../utils/logger';
 import errorHandling from './errorHandling';
 import graphql from './graphql';
+import setupPassport from './auth';
 
 export default async () => {
 	const app = express();
@@ -21,17 +23,24 @@ export default async () => {
 		}),
 	);
 
+	// setupPassport(app);
+	setupPassport(app);
+
 	// Setup routes
 	setupRoutes(app);
 
 	// Setup graphql
-	graphql(app);
+	await graphql(app);
 
 	// Setup error handling
 	errorHandling(app);
 
 	// Start Express API
 	app.listen(config.PORT, () => {
-		logger.logSuccess(`Express server listening on port ${config.PORT}`);
+		logger.logSuccess(
+			`Express server listening on url http://${ip.address()}:${
+				config.PORT
+			}`,
+		);
 	});
 };

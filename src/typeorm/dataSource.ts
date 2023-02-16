@@ -10,7 +10,7 @@ export default new DataSource({
 	username: config.TYPEORM_USERNAME,
 	password: config.TYPEORM_PASSWORD,
 	database: config.TYPEORM_DATABASE,
-	synchronize: false,
+	synchronize: true,
 	logging: false,
 	entities: [User],
 	migrations: ['./migrations/**/*{.ts,.js}'],
