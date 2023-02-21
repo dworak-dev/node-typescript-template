@@ -1,3 +1,9 @@
+/**
+ * @file discord/events/onReady.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * Add slash commands to the Discord client on ready.
+ */
 import { REST } from '@discordjs/rest';
 import { APIApplicationCommandOption, Routes } from 'discord-api-types/v9';
 import Logger from '../../utils/logger';
@@ -31,7 +37,7 @@ export default async (): Promise<void> => {
 		await rest.put(Routes.applicationCommands(config.DISCORD_CLIENT_ID), {
 			body: commandData,
 		});
-		Logger.logInfo('Successfully reloaded application (/) commands.');
+		Logger.logSuccess('Successfully reloaded application (/) commands.');
 	} catch (err) {
 		if (err instanceof Error) Logger.logError(err);
 	}

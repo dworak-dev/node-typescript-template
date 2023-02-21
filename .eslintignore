@@ -5,3 +5,4 @@ coverage/
 jest.config.ts
 .husky/
 migrations/
+docs/

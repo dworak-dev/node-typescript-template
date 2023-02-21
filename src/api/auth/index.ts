@@ -1,4 +1,4 @@
-import './jwtStrategy';
+import './jwt';
 import { Application } from 'express';
 import passport from 'passport';
 import google from './google';

@@ -2,11 +2,11 @@ import passport from 'passport';
 import passportJWT from 'passport-jwt';
 import config from '../../utils/config';
 
-const JWTStrategy = passportJWT.Strategy;
+const Jwt = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
 
 passport.use(
-	new JWTStrategy(
+	new Jwt(
 		{
 			jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
 			secretOrKey: config.JWT_SECRET,

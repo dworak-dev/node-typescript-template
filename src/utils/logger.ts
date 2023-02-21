@@ -1,10 +1,28 @@
+/* eslint-disable no-console */
 /**
- * @file logger.ts
+ * @file utils/logger.ts
+ * @author dworac <mail@dworac.com>
  *
  * This file contains the Logger class.
- * @author dworac <mail@dworac.com>
  */
 import chalk from 'chalk';
+
+const getTimeString = () => {
+	const date = new Date();
+	const hours = date.getHours();
+	const minutes = date.getMinutes();
+	const seconds = date.getSeconds();
+
+	const time = `${hours}:${minutes}:${seconds}`;
+
+	return chalk.gray(`[${time}] `);
+};
+
+const paddPrefix = (prefix: string) => {
+	const { length } = prefix;
+	const padding = 9 - length;
+	return `${' '.repeat(padding)}${prefix} `;
+};
 
 /**
  * Logger class.
@@ -24,8 +42,11 @@ class Logger {
 	 * @param {string} message - Message to be printed with blue highlight.
 	 */
 	static logInfo(message: string) {
-		// eslint-disable-next-line no-console
-		console.log(chalk.blue('[INFO] ') + chalk.white(message));
+		const prefix = chalk.blue(paddPrefix('[INFO]'));
+		const msg = chalk.white(message);
+
+		const log = `${getTimeString()}${prefix}${msg}`;
+		console.log(log);
 	}
 
 	/**
@@ -34,8 +55,11 @@ class Logger {
 	 * @param {string} message - Message to be printed with green highlight.
 	 */
 	static logSuccess(message: string) {
-		// eslint-disable-next-line no-console
-		console.log(chalk.green('[SUCCESS] ') + chalk.green(message));
+		const prefix = chalk.green(paddPrefix('[SUCCESS]'));
+		const msg = chalk.white(message);
+
+		const log = `${getTimeString()}${prefix}${msg}`;
+		console.log(log);
 	}
 
 	/**
@@ -44,15 +68,17 @@ class Logger {
 	 * @param {string} message - Message to be printed with a red highlight.
 	 */
 	static logError(message: string | Error) {
+		const prefix = chalk.red(paddPrefix('[ERROR]'));
+		let msg = '';
+
 		if (typeof message === 'string') {
-			// eslint-disable-next-line no-console
-			console.log(chalk.red('[ERROR] ') + chalk.red(message));
+			msg = chalk.white(message);
 		} else {
-			// eslint-disable-next-line no-console
-			console.log(chalk.red('[ERROR] ') + chalk.red(message.message));
+			msg = chalk.white(message.stack || message.message);
 		}
 
-		// eslint-disable-next-line no-console
+		const log = `${getTimeString()}${prefix}${msg}`;
+		console.log(log);
 	}
 }
 

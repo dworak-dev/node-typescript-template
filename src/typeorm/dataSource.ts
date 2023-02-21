@@ -1,3 +1,9 @@
+/**
+ * @file typeorm/dataSource.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * This file exports the DataSource class used to connect to the database.
+ */
 import { DataSource } from 'typeorm';
 import fs from 'fs';
 import config from '../utils/config';
@@ -16,6 +22,9 @@ export default new DataSource({
 	migrations: ['./migrations/**/*{.ts,.js}'],
 	subscribers: [],
 	ssl: {
-		ca: fs.readFileSync('ca-certificate.crt').toString(),
+		rejectUnauthorized: config.PRODUCTION,
+		ca: config.PRODUCTION
+			? fs.readFileSync('./certs/ca.crt').toString()
+			: undefined,
 	},
 });

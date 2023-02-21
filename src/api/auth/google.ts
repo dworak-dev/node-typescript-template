@@ -15,19 +15,20 @@ passport.use(
 		},
 		async (accessToken, refreshToken, profile, done) => {
 			try {
-				// let user = await UserModel.findOne({ googleId: profile.id });
 				let user = await User.findOne({
 					where: { googleId: profile.id },
 				});
 				if (user) {
 					user.googleAccessToken = accessToken;
 					user.googleRefreshToken = refreshToken;
+					user.firstName = profile.name?.givenName || '';
+					user.lastName = profile.name?.familyName || '';
 					await user.save();
 				} else {
 					user = new User();
 					user.googleId = profile.id;
-					user.firstName = profile.displayName;
-					user.lastName = profile.displayName;
+					user.firstName = profile.name?.givenName || '';
+					user.lastName = profile.name?.familyName || '';
 					user.googleAccessToken = accessToken;
 					user.googleRefreshToken = refreshToken;
 					await user.save();
@@ -62,7 +63,7 @@ export default (app: Application) => {
 				const plain = classToPlain(req.user);
 
 				const token = jwt.sign(plain, config.JWT_SECRET, {
-					expiresIn: 60 * 60 * 24,
+					expiresIn: config.JWT_EXPIRES_IN,
 				});
 				res.cookie('token', token);
 			}

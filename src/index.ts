@@ -1,4 +1,4 @@
-import 'reflect-metadata';
+import './utils/config';
 import discord from './discord';
 import typeorm from './typeorm';
 import api from './api';
