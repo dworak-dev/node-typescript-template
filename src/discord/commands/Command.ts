@@ -1,3 +1,9 @@
+/**
+ * @file discord/commands/Command.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * All commands must extend this class.
+ */
 import {
 	SlashCommandBuilder,
 	SlashCommandSubcommandsOnlyBuilder,

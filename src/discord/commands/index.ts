@@ -1,3 +1,9 @@
+/**
+ * @file discord/commands/index.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * This file exports all commands.
+ */
 import { Collection } from 'discord.js';
 import ping from './ping';
 import { Command } from './Command';

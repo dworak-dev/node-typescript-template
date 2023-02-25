@@ -1,3 +1,9 @@
+/**
+ * @file discord/events/onInteraction.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * Execute the slash command that was called.
+ */
 import { Interaction } from 'discord.js';
 import Logger from '../../utils/logger';
 import commands from '../commands';
