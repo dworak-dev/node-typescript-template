@@ -1,3 +1,9 @@
+/**
+ * @file api/index.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * This file is used to initialize the API. It includes auth, database, and graphql.
+ */
 import express from 'express';
 import 'express-async-errors';
 import cors from 'cors';

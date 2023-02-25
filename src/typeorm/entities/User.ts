@@ -9,7 +9,29 @@
  */
 import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from 'typeorm';
 import { ObjectType, Field, ID } from 'type-graphql';
-
+/**
+ * @swagger
+ *
+ * components:
+ *   schemas:
+ *     User:
+ *       required:
+ *         - id
+ *         - firstName
+ *         - lastName
+ *       properties:
+ *         id:
+ *           type: integer
+ *           format: int64
+ *         firstName:
+ *           type: string
+ *           example: John
+ *           description: The user's first name.
+ *         lastName:
+ *           type: string
+ *           example: Doe
+ *           description: The user's last name.
+ */
 @ObjectType()
 @Entity({ name: 'User' })
 export default class User extends BaseEntity {
@@ -33,6 +55,13 @@ export default class User extends BaseEntity {
 	@Column('text')
 	@Field(() => String)
 	lastName: string;
+
+	/**
+	 * The user's email address.
+	 */
+	@Column('text', { unique: true })
+	@Field(() => String)
+	googleEmail: string;
 
 	/**
 	 * Users google id. Should be unique.

@@ -9,6 +9,8 @@ import fs from 'fs';
 import config from '../utils/config';
 import entities from './entities';
 
+import { update1677276770412 } from './migrations/1677276770412-update';
+
 export default new DataSource({
 	type: 'postgres',
 	host: config.TYPEORM_HOST,
@@ -19,7 +21,7 @@ export default new DataSource({
 	synchronize: false,
 	logging: false,
 	entities,
-	migrations: ['./migrations/**/*{.ts,.js}'],
+	migrations: [update1677276770412],
 	subscribers: [],
 	ssl: {
 		rejectUnauthorized: config.PRODUCTION,

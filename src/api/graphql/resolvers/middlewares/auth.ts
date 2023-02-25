@@ -1,3 +1,9 @@
+/**
+ * @file api/graphql/resolvers/middlewares/auth.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * This middleware checks if the user is authenticated.
+ */
 import { MiddlewareFn } from 'type-graphql';
 import { GraphQLError } from 'graphql/index';
 import { GraphQLContext } from '../../GraphQLContext';

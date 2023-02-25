@@ -1,3 +1,9 @@
+/**
+ * @file api/auth/jwt.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * This file contains the JWT authentication middleware.
+ */
 import passport from 'passport';
 import passportJWT from 'passport-jwt';
 import config from '../../utils/config';

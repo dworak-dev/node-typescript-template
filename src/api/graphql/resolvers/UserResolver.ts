@@ -1,4 +1,10 @@
 /* eslint-disable class-methods-use-this */
+/**
+ * @file api/graphql/resolvers/UserResolver.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * This file serves as a template (example) for other resolvers. Make sure to add the resolver to src\api\graphql\resolvers\index.ts.
+ */
 import { Arg, Query, Resolver, UseMiddleware } from 'type-graphql';
 import { GraphQLError } from 'graphql';
 import User from '../../../typeorm/entities/User';

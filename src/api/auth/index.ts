@@ -1,3 +1,9 @@
+/**
+ * @file api/auth/index.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * This is the entry point for the authentication middleware. We use passport to authenticate requests.
+ */
 import './jwt';
 import { Application } from 'express';
 import passport from 'passport';

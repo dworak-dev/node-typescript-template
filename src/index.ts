@@ -1,3 +1,9 @@
+/**
+ * @file index.ts
+ * @author dworac <mail@dworac.com
+ *
+ * This is the entry point for the application.
+ */
 import './utils/config';
 import discord from './discord';
 import typeorm from './typeorm';

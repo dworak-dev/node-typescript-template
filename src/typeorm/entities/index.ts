@@ -5,5 +5,6 @@
  * This file exports all entities.
  */
 import User from './User';
+import OAuthState from './OAuthState';
 
-export default [User];
+export default [User, OAuthState];

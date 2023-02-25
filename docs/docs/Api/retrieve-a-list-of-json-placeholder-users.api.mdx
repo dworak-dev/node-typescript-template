@@ -1,0 +1,34 @@
+---
+id: retrieve-a-list-of-json-placeholder-users
+title: "Retrieve a list of JSONPlaceholder users."
+description: "Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API."
+sidebar_label: "Retrieve a list of JSONPlaceholder users."
+hide_title: true
+hide_table_of_contents: true
+api: {"description":"Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.","responses":{"200":{"description":"A list of users.","content":{"application/json":{"schema":{"type":"array","items":{"required":["id","name"],"properties":{"id":{"type":"integer","format":"int64"},"name":{"type":"string"},"tag":{"type":"string","description":"A tag for the pet","example":"cat"}}}}}}}},"method":"get","path":"/users","info":{"title":"Hello World","version":"1.0.0"},"postman":{"name":"Retrieve a list of JSONPlaceholder users.","description":{"content":"Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.","type":"text/plain"},"url":{"path":["users"],"host":["{{baseUrl}}"],"query":[],"variable":[]},"header":[{"key":"Accept","value":"application/json"}],"method":"GET"}}
+sidebar_class_name: "get api-method"
+info_path: docs/Api/hello-world
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import TabItem from "@theme/TabItem";
+
+## Retrieve a list of JSONPlaceholder users.
+
+
+
+Retrieve a list of users from JSONPlaceholder. Can be used to populate a list of fake users when prototyping or testing an API.
+
+<div><ApiTabs><TabItem label={"200"} value={"200"}><div>
+
+A list of users.
+
+</div><div><MimeTabs schemaType={"response"}><TabItem label={"application/json"} value={"application/json"}><SchemaTabs><TabItem label={"Schema"} value={"Schema"}><details style={{}} data-collapsed={false} open={true}><summary style={{"textAlign":"left"}}><strong>Schema</strong></summary><div style={{"textAlign":"left","marginLeft":"1rem"}}></div><ul style={{"marginLeft":"1rem"}}><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}>Array [</div></li><SchemaItem collapsible={false} name={"id"} required={false} schemaName={"int64"} qualifierMessage={undefined} schema={{"type":"integer","format":"int64"}}></SchemaItem><SchemaItem collapsible={false} name={"name"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string"}}></SchemaItem><SchemaItem collapsible={false} name={"tag"} required={false} schemaName={"string"} qualifierMessage={undefined} schema={{"type":"string","description":"A tag for the pet","example":"cat"}}></SchemaItem><li><div style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}>]</div></li></ul></details></TabItem><TabItem label={"Example (from schema)"} value={"Example (from schema)"}><ResponseSamples responseExample={"[\n  {\n    \"id\": 0,\n    \"name\": \"string\",\n    \"tag\": \"cat\"\n  }\n]"} language={"json"}></ResponseSamples></TabItem></SchemaTabs></TabItem></MimeTabs></div></TabItem></ApiTabs></div>
+      

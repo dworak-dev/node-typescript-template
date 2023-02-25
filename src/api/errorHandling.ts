@@ -1,3 +1,9 @@
+/**
+ * @file api/errorHandling.ts
+ * @author dworac <mail@dworac.com>
+ *
+ *     All errors should be handled using the HttpException class. This file also includes the express error middleware.
+ */
 import { Application, NextFunction, Request, Response } from 'express';
 
 export class HttpException extends Error {

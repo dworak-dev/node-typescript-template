@@ -1,3 +1,9 @@
+/**
+ * @file api/graphql/resolvers/index.ts
+ * @author dworac <mail@dworac.com>
+ *
+ * This file exports all resolvers.
+ */
 import { NonEmptyArray } from 'type-graphql';
 import UserResolver from './UserResolver';
 
