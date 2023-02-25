@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.4.0](https://github.com/dworac/node-typescript-template/compare/v1.3.0...v1.4.0) (2023-02-25)
+
+
+### Features
+
+* basic express support with EH ([3f6e423](https://github.com/dworac/node-typescript-template/commit/3f6e423b1c28312b39f47c3f23f96cf834ea8452))
+* docs ([0fb12ae](https://github.com/dworac/node-typescript-template/commit/0fb12ae08f67158ad6257a7d3f6546f2ad2b33f4))
+* docs ([d2c241f](https://github.com/dworac/node-typescript-template/commit/d2c241f33ba8a899d24a5fcf0bf363707024559d))
+* docs and jsdoc ([a84dc69](https://github.com/dworac/node-typescript-template/commit/a84dc69e104b3f0e64b2b37ef23ea6d3857603da))
+* grapqhl ([539c57d](https://github.com/dworac/node-typescript-template/commit/539c57dc027676a672fe02845de816f49ed05758))
+* jwt globally with passport ([f28c2fc](https://github.com/dworac/node-typescript-template/commit/f28c2fc54ea71b105fdceb80e73c3d186403022d))
+* passport ([33ddbda](https://github.com/dworac/node-typescript-template/commit/33ddbda27e8ba9383c688b3cdd7614fbeb062966))
+
+
+### Bug Fixes
+
+* fixed dependencies ([2b5dd31](https://github.com/dworac/node-typescript-template/commit/2b5dd312722e1a8c4acee5bbed4cb1bae7b17122))
+
 ## [1.3.0](https://github.com/dworac/node-typescript-template/compare/v1.2.0...v1.3.0) (2023-01-09)
 
 
