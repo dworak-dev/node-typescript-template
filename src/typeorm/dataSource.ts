@@ -8,8 +8,7 @@ import { DataSource } from 'typeorm';
 import fs from 'fs';
 import config from '../utils/config';
 import entities from './entities';
-
-import { update1677276770412 } from './migrations/1677276770412-update';
+import migrations from './migrations';
 
 export default new DataSource({
 	type: 'postgres',
@@ -21,7 +20,7 @@ export default new DataSource({
 	synchronize: false,
 	logging: false,
 	entities,
-	migrations: [update1677276770412],
+	migrations,
 	subscribers: [],
 	ssl: {
 		rejectUnauthorized: config.PRODUCTION,

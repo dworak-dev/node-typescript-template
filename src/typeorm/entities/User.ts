@@ -32,13 +32,13 @@ import { ObjectType, Field, ID } from 'type-graphql';
  *           example: Doe
  *           description: The user's last name.
  */
-@ObjectType()
+@ObjectType('User', { description: 'A user.' })
 @Entity({ name: 'User' })
 export default class User extends BaseEntity {
 	/**
 	 * Auto-generated id. Primary key.
 	 */
-	@PrimaryGeneratedColumn()
+	@PrimaryGeneratedColumn('uuid')
 	@Field(() => ID)
 	id: number;
 
@@ -67,13 +67,13 @@ export default class User extends BaseEntity {
 	 * Users google id. Should be unique.
 	 */
 	@Column('text', { unique: true })
-	@Field(() => String)
+	// @Field(() => String)
 	googleId: string;
 
 	/**
 	 * Users google access token. Used to make requests to google and retrieve information later.
 	 */
 	@Column('text', { nullable: true })
-	@Field(() => String)
+	// @Field(() => String)
 	googleAccessToken: string;
 }

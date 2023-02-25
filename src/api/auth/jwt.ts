@@ -11,6 +11,11 @@ import config from '../../utils/config';
 const Jwt = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
 
+export interface JwtPayload {
+	id: string;
+	email: string;
+}
+
 passport.use(
 	new Jwt(
 		{

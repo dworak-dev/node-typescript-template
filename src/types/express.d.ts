@@ -6,7 +6,7 @@
  */
 declare namespace Express {
 	interface Request {
-		user?: import('../typeorm/entities/User').default;
+		user?: import('../api/auth/jwt').JwtPayload;
 
 		cbURL?: string;
 	}

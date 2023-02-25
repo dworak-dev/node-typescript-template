@@ -7,7 +7,6 @@
 import { Application, Request } from 'express';
 import passport from 'passport';
 import jwt from 'jsonwebtoken';
-import { classToPlain } from 'class-transformer';
 import {
 	GoogleCallbackParameters,
 	Strategy as GoogleStrategy,
@@ -19,6 +18,7 @@ import config from '../../utils/config';
 import User from '../../typeorm/entities/User';
 import OAuthState from '../../typeorm/entities/OAuthState';
 import isURL = validator.isURL;
+import { JwtPayload } from './jwt';
 
 passport.use(
 	new GoogleStrategy(
@@ -108,9 +108,12 @@ export default (app: Application) => {
 		}),
 		(req, res) => {
 			if (req.user) {
-				const plain = classToPlain(req.user);
+				const plainUser: JwtPayload = {
+					id: req.user.id,
+					email: req.user.email,
+				};
 
-				const token = jwt.sign(plain, config.JWT_SECRET, {
+				const token = jwt.sign(plainUser, config.JWT_SECRET, {
 					expiresIn: config.JWT_EXPIRES_IN,
 				});
 

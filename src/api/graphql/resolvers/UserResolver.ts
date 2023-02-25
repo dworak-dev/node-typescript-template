@@ -12,13 +12,13 @@ import authMiddleware from './middlewares/auth';
 
 @Resolver(() => User)
 export default class UserResolver {
-	@Query(() => [User])
+	@Query(() => [User], { description: 'Get all users.' })
 	@UseMiddleware(authMiddleware)
 	users() {
 		return User.find();
 	}
 
-	@Query(() => User)
+	@Query(() => User, { description: 'Get user by id.' })
 	@UseMiddleware(authMiddleware)
 	async user(@Arg('id', () => Number) id: number) {
 		const user = await User.findOne({
